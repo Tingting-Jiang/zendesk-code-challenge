@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { fetchTickets } from './fetchTickets'
+import React from 'react'
+
 
 const TicketList = ({tickets, setList, setTicket}) => {
     
@@ -19,20 +19,32 @@ const TicketList = ({tickets, setList, setTicket}) => {
     }
 
     return (
+        (tickets !== undefined) && (
         
-        <ul className="list-group mb-4">
+        <ol className="list-group list-group-numbered mb-4">
             {tickets.map(ticketItem => (
                 <li key={ticketItem.id}
-                    className="list-group-item"
-                onClick={() => ViewTicket(ticketItem)}>
-                    {ticketItem.subject}
-                    <span className="d-none">
-                        {ticketItem.requester_id}
-                    </span>
+                    className="  list-group-item list-group-item-action"
+                    onClick={() => ViewTicket(ticketItem)}>
+
+                        {ticketItem.subject}  ➡ Priority :
+
+                        {ticketItem.priority === null ?
+                            "Unknown" : ticketItem.priority}
+              
+                    
+                        <button className="btn btn-success float-end"
+                                onClick={() => ViewTicket(ticketItem)}>
+                            Details
+                        </button>
+                
+                   
+                   
                 
                 </li>
             ))}
-        </ul>
+        </ol>
+        )
     
     )
 }

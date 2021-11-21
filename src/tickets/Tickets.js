@@ -1,32 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { fetchTickets } from './fetchTickets'
+import React, { useState } from 'react'
 import TicketDetails from './TicketDetails'
 import TicketList from './TicketList'
-import Pagination from './Pagination'
 
-const Tickets = ({tickets, isList, setList}) => {
-   
+const Tickets = ({tickets, isList, setList, loading}) => {
+    let [ticket, setTicket]= useState();
 
-    // if (loading) {
-    //     return <h2>Loading...</h2>;
-    // }
+    if (loading) {
+        return <h2>Loading...</h2>;
+    }
     
     // console.log(tickets);
     
-    
-    // let [isList, setList] = useState(true);
-    let [ticket, setTicket]= useState();
+  
     
     return (
+   
         <div>
             {isList &&
-            <TicketList tickets={tickets} setList={setList} setTicket={setTicket}/> }
+                <TicketList tickets={tickets} setList={setList}
+                            setTicket={setTicket}/> }
             
             {!isList &&
                 <TicketDetails setList={setList}
                     ticket={ticket}/>}
         </div>
-    )
+        
+    );
     
     
     

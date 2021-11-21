@@ -11,7 +11,7 @@ const AUTH = "Basic " + base.encode(USER + ":" + PASS);
 
 module.exports = (app) =>  {
     
-    const fetchAllTickets = (req, res) => {
+    const fetchSomeTickets = (req, res) => {
         const tickets = `/api/v2/tickets.json?sort_by=created_at&sort_order=desc&page=${
             req.params.thisPage
         }&per_page=${req.params.pageNum}`;
@@ -47,7 +47,6 @@ module.exports = (app) =>  {
             });
         
     }
-    // app.get("/", fetchTickets);
     
-    app.get("/:thisPage/:pageNum", fetchAllTickets);
+    app.get("/:thisPage/:pageNum", fetchSomeTickets);
 }

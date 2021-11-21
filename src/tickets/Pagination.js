@@ -7,19 +7,22 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
         pageNumbers.push(i);
     };
     
-    
-
-    
+    const [active, setActive] = useState(1);
+  
     return (
         <nav className="nav-pills">
             <ul className="pagination">
                 {pageNumbers.map(number => (
-                    <li key={number} className="page-item"   >
+                    <li key={number}
+                        className={`page-item
+                    ${active === number ? "active" : ""}`}   >
                         <a onClick={() => {
                             paginate(number);
+                            setActive(number);
                             
                         }}
-                            href="!#" className="page-link "
+                            href="!#"
+                           className="page-link"
                       >
                             {number}
                         </a>
