@@ -7,13 +7,12 @@ const USER = "jtting@126.com";
 const PASS = "Jtt88384191.";
 const AUTH = "Basic " + base.encode(USER + ":" + PASS);
 // const AUTH = require("./data");
-console.log("in ticket-server1");
+
 
 module.exports = (app) =>  {
-    console.log("in ticket-server2");
+
     const fetchTickets = (req, res) => {
-        console.log("in ticket-server3");
-    
+
        const tickets = "/api/v2/tickets.json";
 
         fetch(URL + tickets, {
@@ -27,16 +26,13 @@ module.exports = (app) =>  {
                     // console.log(response);
                     return response.json();
                 } else {
-                    console.log(URL)
-                    console.log(response);
                     console.log('!!!---Error---!!!')
                     throw response;
                 }
             })
             .then(ticket => {
-                console.log('send data out');
-                console.log(ticket);
                 res.send(ticket);
+                // res.send(res.paginatedResults)
                 console.log('done send data out');
     
             })
@@ -52,11 +48,10 @@ module.exports = (app) =>  {
     
     
     const fetchAllTickets = (req, res) => {
-        console.log("in all ticket-server0");
-        
         const tickets = `/api/v2/tickets.json?sort_by=created_at&sort_order=desc&page=${
             req.params.thisPage
         }&per_page=${req.params.pageNum}`;
+        console.log("api link: ", tickets);
 
         fetch(URL + tickets, {
             method: "GET",
@@ -69,17 +64,15 @@ module.exports = (app) =>  {
                     // console.log(response);
                     return response.json();
                 } else {
-                    console.log(URL)
-                    console.log(response);
                     console.log('!!!---Error---!!!')
                     throw response;
                 }
             })
             .then(ticket => {
-                console.log('send data out');
-                console.log(ticket);
+                // console.log(ticket)
                 res.send(ticket);
-                console.log('done send data out');
+                // console.log(tickets);
+                // console.log('done send data out');
                 
             })
             .catch(e => {
@@ -91,12 +84,38 @@ module.exports = (app) =>  {
             });
         
     }
+    // app.get("/", fetchTickets);
     
-    
-    
-    console.log("in ticket-server4");
-    app.get("/", fetchTickets);
-   
-    console.log("in ticket-server5");
-    // app.get("/tickets/:thisPage/:pageNum", fetchAllTickets);
+    app.get("/:thisPage/:pageNum", fetchAllTickets);
 }
+
+
+// const paginatedResults =(model) => {
+//
+//     return (req, res, next) => {
+//         const page = parseInt(req.query.page);
+//         const limit = parseInt(req.query.limit);
+//         const startIndex = (page - 1) * limit;
+//         const endIndex = page * limit;
+//
+//         const results = {};
+//         if (endIndex < model.length) {
+//             results.next = {
+//                 page: page + 1,
+//                 limit: limit
+//             }
+//         }
+//
+//         if (startIndex > 0) {
+//             results.previous = {
+//                 page: page - 1,
+//                 limit: limit
+//             }
+//         }
+//         results.results = model.slice(startIndex, endIndex);
+//
+//         res.paginatedResults = results;
+//         next();
+//
+//     }
+// }
