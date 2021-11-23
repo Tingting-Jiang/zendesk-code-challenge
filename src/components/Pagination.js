@@ -23,6 +23,7 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
                         }}
                             href="!#"
                            className="page-link"
+                           id="change-page"
                       >
                             {number}
                         </a>

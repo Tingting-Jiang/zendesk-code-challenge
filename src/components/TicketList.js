@@ -24,7 +24,7 @@ const TicketList = ({tickets, setList, setTicket}) => {
         <ol className="list-group list-group-numbered mb-4">
             {tickets.map(ticketItem => (
                 <li key={ticketItem.id}
-                    className="  list-group-item list-group-item-action"
+                    className="list-group-item list-group-item-action"
                     onClick={() => ViewTicket(ticketItem)}>
 
                         {ticketItem.subject}  ➡ Priority :
@@ -37,10 +37,7 @@ const TicketList = ({tickets, setList, setTicket}) => {
                                 onClick={() => ViewTicket(ticketItem)}>
                             Details
                         </button>
-                
-                   
-                   
-                
+               
                 </li>
             ))}
         </ol>

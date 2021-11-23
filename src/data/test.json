@@ -1,0 +1,47 @@
+[
+{
+  "url": "https://zccthanksgiving.zendesk.com/api/v2/tickets/3.json",
+  "id": 3,
+  "external_id": null,
+  "via": {
+    "channel": "api",
+    "source": {
+      "from": {},
+      "to": {},
+      "rel": null
+    }
+  },
+  "created_at": "2021-11-21T00:53:38Z",
+  "updated_at": "2021-11-21T00:53:38Z",
+  "type": null,
+  "subject": "My printer is on fire!",
+  "raw_subject": "My printer is on fire!",
+  "description": "The smoke is very colorful.",
+  "priority": null,
+  "status": "open",
+  "recipient": null,
+  "requester_id": 421863730552,
+  "submitter_id": 421863730552,
+  "assignee_id": 421863730552,
+  "organization_id": 361630660512,
+  "group_id": 360022256532,
+  "collaborator_ids": [],
+  "follower_ids": [],
+  "email_cc_ids": [],
+  "forum_topic_id": null,
+  "problem_id": null,
+  "has_incidents": false,
+  "is_public": true,
+  "due_at": null,
+  "tags": [],
+  "custom_fields": [],
+  "satisfaction_rating": null,
+  "sharing_agreement_ids": [],
+  "fields": [],
+  "followup_ids": [],
+  "ticket_form_id": 360003504512,
+  "brand_id": 360007060192,
+  "allow_channelback": false,
+  "allow_attachments": true
+}
+]

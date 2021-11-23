@@ -1,10 +1,5 @@
 {
   "name": "zendesk",
-  "jest": {
-    "setupFiles": ["raf/polyfill","<rootDir>/src/components/setupTests.js"],
-    "automock": false,
-    "verbose": true
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

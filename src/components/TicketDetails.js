@@ -11,15 +11,25 @@ import React from "react";
 
 
 const TicketDetails = ({ticket, setList}) => {
+        let {
+            subject,
+            description,
+            priority,
+            status,
+            created_at,
+            submitter_id,
+            requester_id,
+            assignee_id
+        } = (ticket === undefined || ticket === null) ? "Unknown" : ticket;
     
-    const {subject,
-        description,
-        priority,
-        status,
-        created_at,
-        submitter_id,
-        requester_id,
-        assignee_id} = ticket;
+    const TranlateTime = (time) => {
+        const date = new Date(time);
+        if (date.toDateString() == "Invalid Date") return "";
+        return date.toLocaleString("en-US");
+    };
+    
+    created_at = TranlateTime(created_at);
+   
    
     return (
         ticket && (

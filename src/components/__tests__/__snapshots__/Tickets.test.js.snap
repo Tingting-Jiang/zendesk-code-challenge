@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tickets/> render Tickets without data 1`] = `ShallowWrapper {}`;
