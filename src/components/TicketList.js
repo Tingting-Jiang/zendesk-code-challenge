@@ -25,7 +25,8 @@ const TicketList = ({tickets, setList, setTicket}) => {
             {tickets.map(ticketItem => (
     
                 <li className="card list-group-item list-group-item-action my-2"
-                    onClick={() => ViewTicket(ticketItem)}>
+                    onClick={() => ViewTicket(ticketItem)}
+                    key={ticketItem.id}>
                     <div className="card-header fs-5">
                         {ticketItem.subject}
                     </div>

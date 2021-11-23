@@ -6,8 +6,6 @@ import { cleanup } from '@testing-library/react'
 
 
 
-
-
 describe("<Pagination/>", () =>{
     // let wrapper;
     // beforeEach(() => {
@@ -52,16 +50,10 @@ describe("<Pagination/>", () =>{
             totalTickets={totalTickets}
             paginate={paginate}/>);
         wrapper.find('#change-page').at(1).props().onClick();
-        // wrapper.find('#change-page').at(1).simulate('click');
         expect(paginate).toHaveBeenCalledTimes(1);
         wrapper.find('#change-page').at(0).simulate('click');
-        expect(paginate).toHaveBeenCalledTimes(1);
+        expect(paginate).toHaveBeenCalledTimes(2);
     })
-    
-    
-    
-    
-    
     
     
 });
