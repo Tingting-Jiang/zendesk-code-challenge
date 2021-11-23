@@ -23,22 +23,46 @@ const TicketList = ({tickets, setList, setTicket}) => {
         
         <ol className="list-group list-group-numbered mb-4">
             {tickets.map(ticketItem => (
-                <li key={ticketItem.id}
-                    className="list-group-item list-group-item-action"
+    
+                <li className="card list-group-item list-group-item-action my-2"
                     onClick={() => ViewTicket(ticketItem)}>
-
-                        {ticketItem.subject}  ➡ Priority :
-
-                        {ticketItem.priority === null ?
-                            "Unknown" : ticketItem.priority}
-              
-                    
-                        <button className="btn btn-success float-end"
-                                onClick={() => ViewTicket(ticketItem)}>
-                            Details
-                        </button>
-               
+                    <div className="card-header fs-5">
+                        {ticketItem.subject}
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Priority : {ticketItem.priority === null ?
+                            "Unknown" : ticketItem.priority}</h5>
+                        <p className="card-text">
+                            Status: {ticketItem.status === null ?
+                            "Unknown" : ticketItem.status }
+                            <button className="btn btn-success float-end">
+                                    {/*// onClick={() => ViewTicket(ticketItem)}>*/}
+                                Details
+                            </button>
+                        </p>
+                    </div>
                 </li>
+
+                
+                
+                
+                
+                
+                // <li key={ticketItem.id}
+                //     className=" card list-group-item list-group-item-action list-group-flush"
+                //     onClick={() => ViewTicket(ticketItem)}>
+                //
+                //         {ticketItem.subject}
+                //         ➡ Priority: {ticketItem.priority === null ?
+                //             "Unknown" : ticketItem.priority}
+                //
+                //
+                //         <button className="btn btn-success float-end"
+                //                 onClick={() => ViewTicket(ticketItem)}>
+                //             Details
+                //         </button>
+                //
+                // </li>
             ))}
         </ol>
         )

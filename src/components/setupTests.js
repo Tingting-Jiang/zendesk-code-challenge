@@ -6,7 +6,8 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-global.fetch = require("jest-fetch-mock");
+// global.fetch = require("jest-fetch-mock");
+require('jest-fetch-mock').enableMocks()
 
 configure({ adapter: new Adapter() });
 
