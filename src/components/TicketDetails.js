@@ -22,13 +22,13 @@ const TicketDetails = ({ticket, setList}) => {
             assignee_id
         } = (ticket === undefined || ticket === null) ? "Unknown" : ticket;
     
-    const TranlateTime = (time) => {
+    const TranslateTime = (time) => {
         const date = new Date(time);
-        if (date.toDateString() == "Invalid Date") return "";
+        if (date.toDateString() === "Invalid Date") return "";
         return date.toLocaleString("en-US");
     };
     
-    created_at = TranlateTime(created_at);
+    created_at = TranslateTime(created_at);
    
    
     return (
@@ -40,69 +40,37 @@ const TicketDetails = ({ticket, setList}) => {
                     Back to Tickets  List
                 </button>
                 <h3>Subject: {subject === null ? "Unknown" : subject}</h3>
-    
-                <table className="table">
-                    <thead>
-                    <tr>
-                        <th scope="col-2">#</th>
-                        <th scope="col-3">Item</th>
-                        <th scope="col-7">Details</th>
-                       
-                    </tr>
-                    </thead>
-                    
-                    <tbody>
-
-
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Description</td>
-                        <td>{description === null ? "Unknown" : description}</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Priority</td>
-                        <td>{priority === null ? "Unknown" : priority}</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Status</td>
-                        <td>{status === null ? "Unknown" : status}</td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Created At</td>
-                        <td>{created_at === null ? "Unknown" : created_at}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Submitter ID</td>
-                        <td>{submitter_id === null ? "Unknown" : submitter_id}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Requester ID</td>
-                        <td>{requester_id === null ? "Unknown" : requester_id}</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Assignee ID</td>
-                        <td>{assignee_id === null ? "Unknown" : assignee_id}</td>
-                    </tr>
-                    
-                    
-                    </tbody>
-            
-                </table>
                 
-            
-                {/*// <p>Status: {ticket.status}</p>*/}
-                {/*// <p >Description: {ticket.description}</p>*/}
-                {/*// <p>Priority: {ticket.priority} </p>*/}
+                <div className="card">
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                            Description: {description === null ? "Unknown" : description}
+                        </li>
+                        <li className="list-group-item">
+                            Priority:
+                            {priority === null ? "Unknown" : priority}
+                        </li>
+                        <li className="list-group-item">
+                            Status: {status === null ? "Unknown" : status}
+                        </li>
+                        <li className="list-group-item">
+                            Created At: {created_at === null ? "Unknown" : created_at}
+                        </li>
+    
+                        <li className="list-group-item">
+                            Submitter ID: {submitter_id === null ? "Unknown" : submitter_id}
+                        </li>
+    
+                        <li className="list-group-item">
+                            Requester ID: {requester_id === null ? "Unknown" : requester_id}
+                        </li>
+    
+                        <li className="list-group-item">
+                            Assignee ID: {assignee_id === null ? "Unknown" : assignee_id}
+                        </li>
+                    </ul>
+                </div>
+                
             </>
         )
         

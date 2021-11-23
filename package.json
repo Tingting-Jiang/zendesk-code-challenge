@@ -46,7 +46,8 @@
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6"
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jest-fetch-mock": "^3.0.3"
   },
   "packageManager": "yarn@3.1.0"
 }

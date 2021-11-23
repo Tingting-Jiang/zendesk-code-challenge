@@ -10,8 +10,8 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
     const [active, setActive] = useState(1);
   
     return (
-        <nav className="nav-pills">
-            <ul className="pagination">
+
+            <ul className="pagination nav nav-pills align-items-center ">
                 {pageNumbers.map(number => (
                     <li key={number}
                         className={`page-item
@@ -30,7 +30,7 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
                     </li>
                 ))}
             </ul>
-        </nav>
+
     )
 };
 export default Pagination;

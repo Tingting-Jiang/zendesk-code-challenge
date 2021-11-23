@@ -42,19 +42,21 @@ describe("<Pagination/>", () =>{
     
     
     
-    // it("render Pagination with data", () => {
-    //     const ticketPerPage = 3;
-    //     const totalTickets = 4;
-    //     const paginate = jest.fn();
-    //
-    //     const wrapper = shallow(<Pagination
-    //         ticketsPerPage={ticketPerPage}
-    //         totalTickets={totalTickets}
-    //         paginate={paginate}/>);
-    //     wrapper.find('#change-page').props().onClick();
-    //     // wrapper.find('#change-page').simulate('click');
-    //     expect(paginate).toHaveBeenCalled();
-    // })
+    it("render Pagination with data", () => {
+        const ticketPerPage = 3;
+        const totalTickets = 4;
+        const paginate = jest.fn();
+
+        const wrapper = shallow(<Pagination
+            ticketsPerPage={ticketPerPage}
+            totalTickets={totalTickets}
+            paginate={paginate}/>);
+        wrapper.find('#change-page').at(1).props().onClick();
+        // wrapper.find('#change-page').at(1).simulate('click');
+        expect(paginate).toHaveBeenCalledTimes(1);
+        wrapper.find('#change-page').at(0).simulate('click');
+        expect(paginate).toHaveBeenCalledTimes(1);
+    })
     
     
     
