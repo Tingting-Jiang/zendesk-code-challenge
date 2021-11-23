@@ -1,5 +1,13 @@
 {
   "name": "zendesk",
+  "jest": {
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/src/components/setupTests.js"
+    ],
+    "automock": false,
+    "verbose": true
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,8 +46,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "jest": "^27.3.1",
-    "jest-fetch-mock": "^3.0.3"
-  }
+    "enzyme-adapter-react-16": "^1.15.6"
+  },
+  "packageManager": "yarn@3.1.0"
 }
