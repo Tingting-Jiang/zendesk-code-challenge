@@ -8,13 +8,11 @@ const PASS = "Jtt88384191.";
 const AUTH = "Basic " + base.encode(USER + ":" + PASS);
 // const AUTH = require("./data");
 
-
 module.exports = (app) =>  {
     
     const fetchSomeTickets = (req, res) => {
-        const tickets = `/api/v2/tickets.json?sort_by=created_at&sort_order=desc&page=${
-            req.params.thisPage
-        }&per_page=${req.params.pageNum}`;
+        const tickets = `/api/v2/tickets.json?sort_by=created_at&sort_order=desc&per_page=${req.params.pageNum}&page=${
+            req.params.thisPage}`;
         console.log("api link: ", tickets);
 
         fetch(URL + tickets, {

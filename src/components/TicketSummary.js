@@ -16,7 +16,7 @@ const TicketSummary = () => {
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     useEffect(() => {
-            fetch(`${URL}/${ticketsPerPage}/${currentPage}`)
+            fetch(`${URL}/${currentPage}/${ticketsPerPage}`)
                 .then(response => {
                     if (response.ok) {
                         return response.json();
