@@ -54,7 +54,7 @@ const TicketDetails = ({ticket, setList}) => {
                         <li className="list-group-item">
                             Status: {status === null ? "Unknown" : status}
                         </li>
-                        <li className="list-group-item">
+                        <li id="time" className="list-group-item">
                             Created At: {created_at === null ? "Unknown" : created_at}
                         </li>
     

@@ -3,6 +3,7 @@ import TicketList from '../TicketList'
 import {shallow, mount, render } from"enzyme";
 import testData from "../../data/test.json";
 import tickets from "../../data/tickets.json";
+import ViewTicket from '../TicketList'
 
 
 describe("<TicketList/>", () =>{
@@ -24,26 +25,17 @@ describe("<TicketList/>", () =>{
     
     it("render TicketList with 25 tickets", ()=>{
         const testData = tickets.tickets;
-        // console.log("-------------", tickets.length());
         const setList= jest.fn();
         const setTicket = jest.fn();
-        const ViewTicket = jest.fn(x => 42 + x);
         const wrapper = shallow(<TicketList tickets={testData}
                                             setList={setList}
                                             setTicket={setTicket}/>);
         expect(wrapper.find('ol').children()).toHaveLength(25);
-        wrapper.find('#list-item').at(0).props().onClick();
-        wrapper.find('#list-item').at(1).props().onClick();
-
-        expect(ViewTicket).toHaveBeenCalledTimes(2);
         
+        wrapper.find('#list-item').at(1).simulate("click");
+        expect(setList).toHaveBeenCalledTimes(1);
+        expect(setTicket).toHaveBeenCalledTimes(1);
     })
-    
-    
-    
-    
-    
-    
     
     
 })

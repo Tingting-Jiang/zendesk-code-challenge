@@ -24,24 +24,26 @@ describe("<TicketDetails/>", () =>{
         expect(setList).toHaveBeenCalledTimes(1);
     });
     
-    // it("render TicketDetails 1 data", () =>{
-    //     const ticket = testData[0];
-    //     const setList = jest.fn();
-    //     const wrapper = shallow(<TicketDetails setList={setList}
-    //                                             ticket={ticket}/>);
-    //     expect(wrapper).toMatchSnapshot();
-    //     expect(wrapper.find('#header').text()).toBe("Subject: My printer is on fire!");
-    //
-    // })
-    //
-    // it("render TicketDetails 1 data", () =>{
-    //     const ticket = tickets.tickets[25];
-    //     const setList = jest.fn();
-    //     const wrapper = shallow(<TicketDetails setList={setList}
-    //                                            ticket={ticket}/>);
-    //     expect(wrapper).toMatchSnapshot();
-    //     expect(wrapper.find('#header').text())
-    //         .toBe("Subject: in nostrud occaecat consectetur aliquip");
-    //
-    // })
+    it("render TicketDetails 1 data", () =>{
+        const ticket = testData[0];
+        const setList = jest.fn();
+        const wrapper = shallow(<TicketDetails setList={setList}
+                                                ticket={ticket}/>);
+        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find('#header').text()).toBe("Subject: My printer is on fire!");
+
+    })
+
+    it("render TicketDetails 1 data", () =>{
+        const ticket = tickets.tickets[24];
+        const setList = jest.fn();
+        const wrapper = shallow(<TicketDetails setList={setList}
+                                               ticket={ticket}/>);
+        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find('#header').text())
+            .toBe("Subject: Lorem aliqua id nisi minim");
+        expect(wrapper.find("#time").text())
+            .toBe("Created At: 11/23/2021, 3:07:49 PM");
+
+    })
 })

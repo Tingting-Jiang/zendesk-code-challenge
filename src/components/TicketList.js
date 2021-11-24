@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 const TicketList = ({tickets, setList, setTicket}) => {
     
     // if (loading) {
@@ -8,7 +9,6 @@ const TicketList = ({tickets, setList, setTicket}) => {
     // }
     
     // console.log(tickets);
-    
     
     const ViewTicket = (ticket) => {
         // console.log("event is", ticket);
