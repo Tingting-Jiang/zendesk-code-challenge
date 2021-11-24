@@ -36,10 +36,11 @@ const TicketDetails = ({ticket, setList}) => {
             <>
                 <button
                     className="btn btn-primary my-5"
-                    onClick={() => setList(true)}>
-                    Back to Tickets  List
+                    onClick={() => setList(true)}
+                    id="button">
+                    Back to Tickets List
                 </button>
-                <h3>Subject: {subject === null ? "Unknown" : subject}</h3>
+                <h3 id="header">Subject: {subject === null ? "Unknown" : subject}</h3>
                 
                 <div className="card">
                     <ul className="list-group list-group-flush">

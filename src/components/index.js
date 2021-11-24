@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { fetchSomeTickets } from './fetchTickets'
 import Pagination from './Pagination'
 import Tickets from './Tickets'
-const ticketsPerPage = 2;
+const ticketsPerPage = 25;
 
 const TicketSummary = () => {
     

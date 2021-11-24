@@ -40,11 +40,10 @@ describe("<Pagination/>", () =>{
     
     
     
-    it("render Pagination with data", () => {
+    it("render Pagination with 2 page", () => {
         const ticketPerPage = 3;
         const totalTickets = 4;
         const paginate = jest.fn();
-
         const wrapper = shallow(<Pagination
             ticketsPerPage={ticketPerPage}
             totalTickets={totalTickets}
@@ -53,6 +52,17 @@ describe("<Pagination/>", () =>{
         expect(paginate).toHaveBeenCalledTimes(1);
         wrapper.find('#change-page').at(0).simulate('click');
         expect(paginate).toHaveBeenCalledTimes(2);
+    })
+    
+    
+    it("render Pagination 25 pages", () => {
+        const ticketPerPage = 25;
+        const totalTickets = 104;
+        const wrapper = shallow(<Pagination
+            ticketsPerPage={ticketPerPage}
+            totalTickets={totalTickets} />);
+        const item = Math.ceil(totalTickets / ticketPerPage);
+        expect(wrapper.find('ul').children()).toHaveLength(item);
     })
     
     

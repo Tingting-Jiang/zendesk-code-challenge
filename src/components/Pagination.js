@@ -11,7 +11,7 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
   
     return (
 
-            <ul className="pagination nav nav-pills align-items-center ">
+            <ul className="pagination nav nav-pills justify-content-center">
                 {pageNumbers.map(number => (
                     <li key={number}
                         className={`page-item
