@@ -3,21 +3,6 @@ import React from 'react'
 
 
 const TicketList = ({tickets, setList, setTicket}) => {
-    
-    // if (loading) {
-    //     return <h2>Loading...</h2>;
-    // }
-    
-    // console.log(tickets);
-    
-    const ViewTicket = (ticket) => {
-        // console.log("event is", ticket);
-        setTicket(ticket);
-        setList(false);
-        // console.log("after setting: ", ticket);
-        
-    }
-
     return (
         (tickets !== undefined) && (
         
@@ -27,7 +12,11 @@ const TicketList = ({tickets, setList, setTicket}) => {
                 <li key={ticketItem.id}
                     
                     className=" card list-group-item list-group-item-action list-group-flush"
-                    onClick={() => ViewTicket(ticketItem)}
+                    onClick={() => {
+                        setTicket(ticketItem);
+                        setList(false);
+                        }
+                    }
                     id="list-item">
 
                         {ticketItem.subject}

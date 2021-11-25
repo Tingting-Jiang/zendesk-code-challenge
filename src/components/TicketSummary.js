@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Pagination from './Pagination'
 import Tickets from './Tickets'
-const ticketsPerPage = 25;
-const URL = "http://localhost:4000";
+import {ticketsPerPage, URL} from "../data/data";
+// const ticketsPerPage = 25;
+// const URL = "http://localhost:4000";
 
 const TicketSummary = () => {
+    
+    const ticketsPerPage = 25;
+    const URL = "http://localhost:4000";
     
     const [tickets, setTickets] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -29,10 +33,14 @@ const TicketSummary = () => {
                     setLoading(false);
                 }).catch(e => {
                     console.log("--------Error-------");
-                    if (e.status) {
-                        setError(e.status + " " + e.statusText);
-                    } else {
-                        setError(e.message);
+                    if (e.status === 401) {
+                        setError("Sorry, we could not Authenticate you");
+                    } else if (e.status === 404) {
+                        setError("API endpoint seems lost");
+                    }  else if (e.status === 403) {
+                        setError("API website address issue");
+                    }else {
+                        setError(e.message + ", " + "retry to connect server");
                     }
                 setLoading(false);
             })
@@ -58,7 +66,8 @@ const TicketSummary = () => {
             <>
             
                 {isList && <h3 className="my-5">
-                    {length} total tickets, {tickets.length} on this page
+                    {length} total tickets,
+                    {tickets.length} on this page
                 </h3>}
             
                 <Tickets tickets={tickets}
