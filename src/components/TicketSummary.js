@@ -22,12 +22,14 @@ const TicketSummary = () => {
     useEffect(() => {
             fetch(`${URL}/${currentPage}/${ticketsPerPage}`)
                 .then(response => {
+                    // console.log(response.json());
                     if (response.ok) {
                         return response.json();
                     } else {
                         throw response;
                     }})
                 .then(data => {
+                    // console.log(data);
                     setTickets(data.tickets);
                     setLength(data.count);
                     setLoading(false);

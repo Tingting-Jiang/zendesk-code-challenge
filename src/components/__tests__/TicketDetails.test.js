@@ -20,7 +20,7 @@ describe("<TicketDetails/>", () =>{
         const setList = jest.fn();
         const wrapper = shallow(<TicketDetails ticket={ticket} setList={setList}/>);
         expect(wrapper).toMatchSnapshot();
-        expect(wrapper.find('#error').text()).toBe("Oops, the ticket is empty...");
+        expect(wrapper.find('#error-header').text()).toBe("Oops, the ticket is empty...");
         wrapper.find('#button2').simulate('click');
         expect(setList).toHaveBeenCalledTimes(1);
     });
