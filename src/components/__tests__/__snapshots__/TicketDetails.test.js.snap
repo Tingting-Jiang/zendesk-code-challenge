@@ -4,6 +4,8 @@ exports[`<TicketDetails/> render TicketDetails 1 data 1`] = `ShallowWrapper {}`;
 
 exports[`<TicketDetails/> render TicketDetails 1 data 2`] = `ShallowWrapper {}`;
 
+exports[`<TicketDetails/> render TicketDetails 1 data 3`] = `ShallowWrapper {}`;
+
 exports[`<TicketDetails/> render TicketDetails with fake data 1`] = `ShallowWrapper {}`;
 
 exports[`<TicketDetails/> render TicketDetails without data 1`] = `ShallowWrapper {}`;

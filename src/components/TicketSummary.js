@@ -34,7 +34,7 @@ const TicketSummary = () => {
                     setLength(data.count);
                     setLoading(false);
                 }).catch(e => {
-                    console.log("--------Error-------");
+                    // console.log("--------Error-------");
                     if (e.status === 401) {
                         setError("Sorry, we could not Authenticate you");
                     } else if (e.status === 404) {
@@ -58,7 +58,7 @@ const TicketSummary = () => {
         return (
             <div>
                 <h3>Oops, something wrong 😭😭</h3>
-                <p id="error"> Error Message: {error} </p>
+                <p id="error">Error Message: {error}</p>
             </div>
         )
     }

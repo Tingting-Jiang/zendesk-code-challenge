@@ -35,7 +35,7 @@ describe("<TicketSummary/>", () => {
         }));
     });
     
-    it("render TicketSummary without data", async () => {
+    it("render TicketSummary with 25 data", async () => {
         await act(async () => {
             wrapper = mount(<TicketSummary/>)
         });
@@ -47,5 +47,100 @@ describe("<TicketSummary/>", () => {
         expect(header.exists()).toBe(true);
         expect(header.text()).toEqual("104 total tickets, 25 on this page");
     });
+})
 
+describe("<TicketSummary/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        const mockResponseData = testData;
+        jest.clearAllMocks();
+        global.fetch = jest.fn(async () => ({
+            json: async () => mockResponseData,
+            ok: false,
+            status: 401,
+        }));
+    });
+    
+    it("render TicketSummary error 401", async () => {
+        await act(async () => {
+            wrapper = mount(<TicketSummary/>)
+        });
+        wrapper.update();                           // <--
+        const header = wrapper.find("h3");
+        expect(wrapper.find("#error").text()).toBe("Error Message: Sorry, we could not Authenticate you");
+        expect(header.exists()).toBe(true);
+    });
+})
+
+describe("<TicketSummary/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        const mockResponseData = testData;
+        jest.clearAllMocks();
+        global.fetch = jest.fn(async () => ({
+            json: async () => mockResponseData,
+            ok: false,
+            status: 404,
+        }));
+    });
+    
+    it("render TicketSummary error 404", async () => {
+        await act(async () => {
+            wrapper = mount(<TicketSummary/>)
+        });
+        wrapper.update();                           // <--
+        const header = wrapper.find("h3");
+        expect(wrapper.find("#error").text()).toBe("Error Message: API endpoint seems lost");
+        expect(header.exists()).toBe(true);
+    });
+})
+
+describe("<TicketSummary/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        const mockResponseData = testData;
+        jest.clearAllMocks();
+        global.fetch = jest.fn(async () => ({
+            json: async () => mockResponseData,
+            ok: false,
+            status: 403,
+        }));
+    });
+    
+    it("render TicketSummary error 403", async () => {
+        await act(async () => {
+            wrapper = mount(<TicketSummary/>)
+        });
+        wrapper.update();                           // <--
+        const header = wrapper.find("h3");
+        expect(wrapper.find("#error").text()).toBe("Error Message: API website address issue");
+        expect(header.exists()).toBe(true);
+    });
+})
+
+describe("<TicketSummary/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        const mockResponseData = testData;
+        jest.clearAllMocks();
+        global.fetch = jest.fn(async () => ({
+            json: async () => mockResponseData,
+            ok: false,
+            message: "API not responding for some reason"
+        }));
+    });
+    
+    it("render TicketSummary other error", async () => {
+        await act(async () => {
+            wrapper = mount(<TicketSummary/>)
+        });
+        wrapper.update();                           // <--
+        const header = wrapper.find("h3");
+        expect(wrapper.find("#error").text()).toBe("Error Message: API not responding for some reason, retry to connect server and refresh");
+        expect(header.exists()).toBe(true);
+    });
 })

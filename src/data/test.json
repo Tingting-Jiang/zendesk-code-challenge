@@ -43,5 +43,54 @@
   "brand_id": 360007060192,
   "allow_channelback": false,
   "allow_attachments": true
-}
+},
+  {
+    "url": "https://zccthanksgiving.zendesk.com/api/v2/tickets/80.json",
+    "id": 80,
+    "external_id": null,
+    "via": {
+      "channel": "api",
+      "source": {
+        "from": {},
+        "to": {},
+        "rel": null
+      }
+    },
+    "created_at": null,
+    "updated_at": "2021-11-23T23:07:49Z",
+    "type": null,
+    "subject": null,
+    "raw_subject": "Lorem aliqua id nisi minim",
+    "description": null,
+    "priority": "high",
+    "status": null,
+    "recipient": null,
+    "requester_id": null,
+    "submitter_id": null,
+    "assignee_id": null,
+    "organization_id": 361630660512,
+    "group_id": 360022256532,
+    "collaborator_ids": [],
+    "follower_ids": [],
+    "email_cc_ids": [],
+    "forum_topic_id": null,
+    "problem_id": null,
+    "has_incidents": false,
+    "is_public": true,
+    "due_at": null,
+    "tags": [
+      "ad",
+      "cillum",
+      "ullamco"
+    ],
+    "custom_fields": [],
+    "satisfaction_rating": null,
+    "sharing_agreement_ids": [],
+    "fields": [],
+    "followup_ids": [],
+    "ticket_form_id": 360003504512,
+    "brand_id": 360007060192,
+    "allow_channelback": false,
+    "allow_attachments": true
+  }
 ]

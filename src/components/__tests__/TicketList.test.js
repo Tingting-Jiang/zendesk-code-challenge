@@ -20,7 +20,7 @@ describe("<TicketList/>", () =>{
                                             setList={setList}
                                             setTicket={setTicket}/>);
         
-        expect(wrapper.find('ol').children()).toHaveLength(1);
+        expect(wrapper.find('ol').children()).toHaveLength(2);
     })
     
     it("render TicketList with 25 tickets", ()=>{

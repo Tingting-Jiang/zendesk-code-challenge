@@ -20,9 +20,7 @@ const TicketList = ({tickets, setList, setTicket}) => {
                     id="list-item">
 
                         {ticketItem.subject}
-                        <span className="float-end">Status ➡ {ticketItem.status === null ?
-                    "Unknown" : ticketItem.status}</span>
-
+                        <span className="float-end">Status ➡ {ticketItem.status === null ? "Unknown" : ticketItem.status}</span>
                 </li>
             ))}
         </ol>

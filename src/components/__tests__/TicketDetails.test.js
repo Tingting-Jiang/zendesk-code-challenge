@@ -40,7 +40,9 @@ describe("<TicketDetails/>", () =>{
         const wrapper = shallow(<TicketDetails setList={setList}
                                                 ticket={ticket}/>);
         expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find("#detail-list").children()).toHaveLength(7);
         expect(wrapper.find('#header').text()).toBe("Subject: My printer is on fire!");
+        expect(wrapper.find("#description").text()).toBe("Description: The smoke is very colorful.");
 
     })
 
@@ -55,5 +57,18 @@ describe("<TicketDetails/>", () =>{
         expect(wrapper.find("#time").text())
             .toBe("Created At: 11/23/2021, 3:07:49 PM");
 
+    })
+    
+    it("render TicketDetails 1 data", () =>{
+        const ticket = testData[1];
+        const setList = jest.fn();
+        const wrapper = shallow(<TicketDetails setList={setList}
+                                             ticket={ticket}/>);
+        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find('#header').text())
+            .toBe("Subject: Unknown");
+        expect(wrapper.find("#time").text())
+            .toBe("Created At: 12/31/1969, 4:00:00 PM");
+        
     })
 })
