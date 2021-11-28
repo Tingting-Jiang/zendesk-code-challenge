@@ -7,7 +7,7 @@ import {ticketsPerPage, URL} from "../data/data";
 
 const TicketSummary = () => {
     
-    const ticketsPerPage = 25;
+    const ticketsPerPage = 10;
     const URL = "http://localhost:4000";
     
     const [tickets, setTickets] = useState([]);
