@@ -13,7 +13,7 @@ const TicketList = ({tickets, setList, setTicket}) => {
                     
                     className=" card list-group-item list-group-item-action list-group-flush"
                     onClick={() => {
-                        setTicket(ticketItem);
+                        setTicket();
                         setList(false);
                         }
                     }

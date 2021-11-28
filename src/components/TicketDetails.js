@@ -11,7 +11,7 @@ import React from "react";
 
 
 const TicketDetails = ({ticket, setList}) => {
-    console.log(ticket);
+    // console.log(ticket);
    
    
    if (ticket !== null && ticket !== undefined ){
@@ -39,7 +39,7 @@ const TicketDetails = ({ticket, setList}) => {
                 <button
                     className="btn btn-primary my-5"
                     onClick={() => setList(true)}
-                    id="button">
+                    id="button1">
                     Back to Tickets List
                 </button>
                 <h2 id="header">Subject: {subject === null ? "Unknown" : subject}</h2>
@@ -85,10 +85,11 @@ const TicketDetails = ({ticket, setList}) => {
                <button
                    className="btn btn-primary my-5"
                    onClick={() => setList(true)}
-                   id="button">
+                   id="button2">
                    Back to Tickets List
                </button>
-               <h3 className="my-5">Oops, the ticket is empty...</h3>
+               <h3 id="error-header"
+                   className="my-5">Oops, the ticket is empty...</h3>
             </>
        )
     }

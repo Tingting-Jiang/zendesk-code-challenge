@@ -40,7 +40,7 @@ const TicketSummary = () => {
                     }  else if (e.status === 403) {
                         setError("API website address issue");
                     }else {
-                        setError(e.message + ", " + "retry to connect server");
+                        setError(e.message + ", " + "retry to connect server and refresh");
                     }
                 setLoading(false);
             })
@@ -66,8 +66,7 @@ const TicketSummary = () => {
             <>
             
                 {isList && <h3 className="my-5">
-                    {length} total tickets,
-                    {tickets.length} on this page
+                    {length} total tickets, {tickets.length} on this page
                 </h3>}
             
                 <Tickets tickets={tickets}
