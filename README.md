@@ -47,7 +47,24 @@ use terminal No.2 to run the following)
     npm test
 
 ---
-        
 
-
-
+### **Test Coverage Result**
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ src               |     100 |      100 |     100 |     100 |                   
+  App.js           |     100 |      100 |     100 |     100 |                   
+ src/components    |     100 |      100 |     100 |     100 |                   
+  Pagination.js    |     100 |      100 |     100 |     100 |                   
+  TicketDetails.js |     100 |      100 |     100 |     100 |                   
+  TicketList.js    |     100 |      100 |     100 |     100 |                   
+  TicketSummary.js |     100 |      100 |     100 |     100 |                   
+  Tickets.js       |     100 |      100 |     100 |     100 |                   
+ src/data          |     100 |      100 |     100 |     100 |                   
+  data.js          |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+Test Suites: 6 passed, 6 total
+Tests:       24 passed, 24 total
+Snapshots:   10 passed, 10 total
+Time:        2.109 s
