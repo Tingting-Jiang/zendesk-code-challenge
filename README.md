@@ -4,7 +4,10 @@ A mobile tickets viewer web application of Zendesk's accounts.
 
 #### Preview:
 
-![img_2.png](img_2.png)
+![](img_2.png)
+
+[comment]: <> (![]&#40;img.png&#41;)
+
 ___
 
 ## **Steps**
