@@ -62,7 +62,7 @@ Then run the following code in Terminal NO.1
 
     npm start
     
-##### Hover the mouse near each tickets and click to display the destails. 
+##### Hover the mouse near each ticket and click to display the details. 
 
 ##### Run test
 
