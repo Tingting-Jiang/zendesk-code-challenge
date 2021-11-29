@@ -19,18 +19,18 @@ Clone the project to a local directory named "zendesk":
 
 **Prerequisite:**
 
-Open two terminal windows: both get into the local directory "zendesk"
+Open two terminal windows: both get into the local directory "zendesk-coding-challenge"
 
-    cd zendesk
+    cd zendesk-coding-challenge
 
 Install node_modules dependencies:
 
-Terminal NO.1 (in server)
+Terminal NO.1 (in zendesk-coding-challenge/server)
 
     cd server
     npm install
 
-Terminal NO.2  (in zendesk)
+Terminal NO.2  (in zendesk-coding-challenge)
 
     npm install
 
@@ -38,7 +38,7 @@ ___
 
 ### **Build**
 
-##### Terminal NO.1 (in server)
+##### Terminal NO.1 (in zendesk-coding-challenge/server)
 
 Create a new file called "server-data.js" under "server" directory and copy the following code into it.
 
@@ -58,9 +58,11 @@ Then run the following code in Terminal NO.1
 
     npm start
 
-##### Terminal NO.2  (in zendesk-coding)
+##### Terminal NO.2  (in zendesk-coding-challenge)
 
     npm start
+    
+##### Hover the mouse near each tickets and click to display the destails. 
 
 ##### Run test
 
