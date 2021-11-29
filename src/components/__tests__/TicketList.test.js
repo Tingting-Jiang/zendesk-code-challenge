@@ -1,9 +1,9 @@
 import React from 'react';
 import TicketList from '../TicketList'
-import {shallow, mount, render } from"enzyme";
+import {shallow } from"enzyme";
 import testData from "../../data/test.json";
 import tickets from "../../data/tickets.json";
-import ViewTicket from '../TicketList'
+
 
 
 describe("<TicketList/>", () =>{

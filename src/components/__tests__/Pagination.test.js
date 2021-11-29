@@ -1,17 +1,12 @@
 import React from 'react';
 import Pagination from '../Pagination';
-import {shallow, mount, render } from"enzyme";
-import renderer from "react-test-renderer";
+import {shallow} from"enzyme";
+
 import { cleanup } from '@testing-library/react'
 
 
 
 describe("<Pagination/>", () =>{
-    // let wrapper;
-    // beforeEach(() => {
-    //     wrapper = shallow(<Pagination />);
-    // })
-    //
     afterAll( () => {
         cleanup();
     })

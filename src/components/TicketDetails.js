@@ -1,19 +1,6 @@
 import React from "react";
 
-
-// const TicketDetails = ({ticket = {
-//     requester_id: 100,
-//     subject: "in nostrud occaecat consectetur aliquip",
-//     description: "Esse esse quis ut esse nisi tempor sunt. Proident",
-//     priority: "low",
-//     status: "open"
-// }, setList}) => {
-
-
 const TicketDetails = ({ticket, setList}) => {
-    // console.log(ticket);
-   
-   
    if (ticket !== null && ticket !== undefined ){
        let {
            subject,

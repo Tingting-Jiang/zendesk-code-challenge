@@ -1,6 +1,6 @@
 import React from 'react';
 import Tickets from '../Tickets'
-import {shallow, mount, render } from"enzyme";
+import {shallow } from"enzyme";
 import testData from "../../data/test.json";
 import TicketList from '../TicketList';
 import TicketDetails from '../TicketDetails'

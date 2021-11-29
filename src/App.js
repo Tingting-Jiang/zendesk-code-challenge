@@ -1,6 +1,6 @@
 // import "./App.css";
 import React from 'react'
-import TicketSummary from './components/TicketSummary'
+import TicketSummary from './components/index'
 
 
 function App() {

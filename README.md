@@ -4,9 +4,8 @@ A mobile tickets viewer web application of Zendesk's accounts.
 
 #### Preview:
 
-![](img_2.png)
+![](src/data/21901638156094_.pic_hd.jpg)
 
-[comment]: <> (![]&#40;img.png&#41;)
 
 ___
 
@@ -14,15 +13,24 @@ ___
 
 ### **Install**
 
-Clone the project to a local directory named "zendesk-coding":
+Clone the project to a local directory named "zendesk":
     
     git clone https://github.com/Tingting-Jiang/zendesk-coding-challenge.git
-   
-Get into the directory:
 
-    cd zendesk-coding
+**Prerequisite:**
+
+Open two terminal windows: both get into the local directory "zendesk"
+
+    cd zendesk
 
 Install node_modules dependencies:
+
+Terminal NO.1 (in server)
+
+    cd server
+    npm install
+
+Terminal NO.2  (in zendesk)
 
     npm install
 
@@ -30,25 +38,35 @@ ___
 
 ### **Build**
 
-**Prerequisite:** 
+##### Terminal NO.1 (in server)
 
-Open two terminal windows: both get into the local directory "zendesk-coding"
+Create a new file called "server-data.js" under "server" directory and copy the following code into it.
 
-Set up server (terminal No.1):
+    const base = require('base-64');
+    
+    const USER = "jtting@126.com";
+    
+    const PASS = "Jtting@126.com";
+    
+    let AUTH = "Basic " + base.encode(USER + ":" + PASS);
+    
+    module.exports = AUTH;
+---
+Then run the following code in Terminal NO.1
 
     cd server
-    npm run devStart
-
-Run front end (terminal No.2)
 
     npm start
 
-Run test (first exit (Ctrl + C/D ) from both terminals, 
-use terminal No.2 to run the following)
+##### Terminal NO.2  (in zendesk-coding)
+
+    npm start
+
+##### Run test
+
+First exit (Ctrl + C / D ) from both terminals, use Terminal NO.2 to run the following
 
     npm test
-
----
 
 ### **Test Coverage Result**
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 

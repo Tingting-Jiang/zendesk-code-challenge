@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 
-const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
+const Pagination = ({ticketsPerPage, totalTickets, paginate, active}) =>{
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(totalTickets / ticketsPerPage ); i++) {
         pageNumbers.push(i);
     };
-    
-    const [active, setActive] = useState(1);
   
     return (
 
@@ -18,10 +16,8 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
                     ${active === number ? "active" : ""}`}   >
                         <a onClick={() => {
                             paginate(number);
-                            setActive(number);
-                            
                         }}
-                            href="/"
+                           href="/#"
                            className="page-link"
                            id="change-page"
                            data-testid="change-page2"
@@ -31,7 +27,6 @@ const Pagination = ({ticketsPerPage, totalTickets, paginate}) =>{
                     </li>
                 ))}
             </ul>
-
     )
 };
 export default Pagination;

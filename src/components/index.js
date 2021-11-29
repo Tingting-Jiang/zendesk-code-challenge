@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { fetchSomeTickets } from './fetchTickets'
 import Pagination from './Pagination'
 import Tickets from './Tickets'
-const ticketsPerPage = 25;
+import {ticketsPerPage, URL} from "../data/data";
 
 const TicketSummary = () => {
     
@@ -12,38 +11,48 @@ const TicketSummary = () => {
     const [length, setLength]= useState(0);
     let [isList, setList] = useState(true);
     const [error, setError] = useState(null);
-   
-    const paginate = pageNumber => setCurrentPage(pageNumber);
-
+    const [active, setActive] = useState(1);
+    
+    
+    const paginate = pageNumber => {
+        setCurrentPage(pageNumber);
+        setActive(pageNumber);
+    };
+    
+    
     useEffect(() => {
-            console.log("Start fectchSomeTickets function");
-            fetchSomeTickets(currentPage, ticketsPerPage)
+            fetch(`${URL}/${currentPage}/${ticketsPerPage}`)
+                .then(response => {
+                    // console.log(response.json());
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }})
                 .then(data => {
                     setTickets(data.tickets);
                     setLength(data.count);
                     setLoading(false);
                 }).catch(e => {
-                    console.log("--------Error-------");
-                    if (e.status) {
-                        setError(e.status + " " + e.statusText);
-                    } else {
-                        setError(e.message);
-                    }
+                if (e.status === 401) {
+                    setError("Sorry, we could not Authenticate you");
+                } else if (e.status === 404) {
+                    setError("API endpoint seems lost");
+                }  else if (e.status === 403) {
+                    setError("API website address issue");
+                }else {
+                    setError(e.message + ", " + "retry to connect server and refresh");
+                }
                 setLoading(false);
             })
         }
         ,[currentPage]);
     
-    
-    console.log("after useEffect, tickets: ", tickets);
-    console.log("---------------------");
-    
-    
     if (error !== null) {
         return (
             <div>
-                <h3>There is something wrong 😭😭</h3>
-                <p> Error Message: {error} </p>
+                <h3>Oops, something wrong 😭😭</h3>
+                <p id="error">Error Message: {error}</p>
             </div>
         )
     }
@@ -51,28 +60,23 @@ const TicketSummary = () => {
     else {
         return (
             <>
-                {/*{loading && (*/}
-                {/*    <div className="text-secondary">*/}
-                {/*        <p>{"Loading Tickets..."}</p>*/}
-                {/*    </div>*/}
-                {/*)}*/}
-            
-                {isList && <h3 className="my-5">
+                
+                {isList && <h3 className="my-3">
                     {length} total tickets, {tickets.length} on this page
                 </h3>}
-            
+                
                 <Tickets tickets={tickets}
                          isList={isList}
                          setList={setList}
-                         error={error}
                          loading={loading}/>
                 <hr/>
                 {isList &&
                 <Pagination ticketsPerPage={ticketsPerPage}
                             totalTickets={length}
-                            paginate={paginate}/>}
-        
-        
+                            paginate={paginate}
+                            active={active}/>}
+            
+            
             </>
         )
     }

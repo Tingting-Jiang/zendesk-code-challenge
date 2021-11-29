@@ -1,6 +1,6 @@
 import React from 'react';
 import TicketDetails from '../TicketDetails'
-import {shallow, mount, render } from"enzyme";
+import {shallow } from"enzyme";
 import testData from "../../data/test.json";
 import { cleanup } from '@testing-library/react';
 import tickets from  "../../data/tickets.json";

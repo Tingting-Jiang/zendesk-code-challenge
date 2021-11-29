@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-
 const TicketList = ({tickets, setList, setTicket}) => {
     return (
         (tickets !== undefined) && (
@@ -13,7 +11,7 @@ const TicketList = ({tickets, setList, setTicket}) => {
                     
                     className=" card list-group-item list-group-item-action list-group-flush"
                     onClick={() => {
-                        setTicket();
+                        setTicket(ticketItem);
                         setList(false);
                         }
                     }
